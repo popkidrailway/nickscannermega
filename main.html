@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>NICK XD SESSIONS | GREEN EDITION</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a2e0da6e4c.js" crossorigin="anonymous"></script>
+
+<style>
+:root {
+  --primary-green: #2ecc71;
+  --deep-green: #0a2e1a;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --ios-blur: blur(25px);
+  --text-main: #e0f2f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #040d08;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Moving Green Particles Background */
+#particle-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle at center, #0d2b1a 0%, #040d08 100%);
+}
+
+.particle {
+  position: absolute;
+  background: var(--primary-green);
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(5px);
+  animation: float 15s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* Glass Card */
+.main-card {
+  position: relative;
+  z-index: 10;
+  width: 90%;
+  max-width: 450px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--ios-blur);
+  -webkit-backdrop-filter: var(--ios-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 35px;
+  padding: 40px 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: iosReveal 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes iosReveal {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Avatar/Logo */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--primary-green), #00ff88);
+  border-radius: 30px; /* iOS Squircle style */
+  box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+}
+
+.logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+  background: #000;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #fff, var(--primary-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* iOS Status Bar Style */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border: 1px solid var(--glass-border);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-green);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary-green);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Sections & Buttons */
+.menu-group {
+  margin-bottom: 25px;
+}
+
+.menu-label {
+  display: block;
+  text-align: left;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 15px;
+  margin-bottom: 8px;
+  color: var(--primary-green);
+  opacity: 0.8;
+}
+
+.btn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ios-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.ios-btn:hover {
+  background: rgba(46, 204, 113, 0.15);
+  border-color: rgba(46, 204, 113, 0.3);
+  transform: translateX(5px);
+}
+
+.ios-btn i {
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  font-size: 0.7rem;
+  opacity: 0.5;
+  line-height: 1.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="particle-container"></div>
+
+<div class="main-card">
+  <div class="logo-container">
+    <div class="logo-wrapper">
+      <img src="https://files.catbox.moe/j9ia5c.png" alt="NICK Logo">
+    </div>
+  </div>
+
+  <h1>NICK XMD 2026</h1>
+
+  <div class="status-pill">
+    <div class="dot"></div>
+    <span id="time-val">00:00:00</span>
+    <span>•</span>
+    <span id="battery-status">100%</span>
+  </div>
+
+  <div class="menu-group">
+    <span class="menu-label">Authentication</span>
+    <div class="btn-list">
+      <button class="ios-btn" onclick="window.open('/pair')">
+        <span>Get Pairing Code</span>
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <span class="menu-label">Connect & Social</span>
+    <div class="btn-list">
+      <button class="ios-btn" onclick="window.open('https://github.com/nickxd254')">
+        <span>Github Repository</span>
+        <i class="fab fa-github"></i>
+      </button>
+      <button class="ios-btn" onclick="window.open('https://whatsapp.com/channel/0029Vb70ySJHbFV91PNKuL3T')">
+        <span>WhatsApp Community</span>
+        <i class="fab fa-whatsapp"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div id="date-val">Date</div>
+    <div>Made with passion by Nick Projects ❤️‍🩹</div>
+  </div>
+</div>
+
+<script>
+// Particle Background Generator
+const container = document.getElementById('particle-container');
+for (let i = 0; i < 20; i++) {
+  const particle = document.createElement('div');
+  particle.className = 'particle';
+  const size = Math.random() * 80 + 20 + 'px';
+  particle.style.width = size;
+  particle.style.height = size;
+  particle.style.left = Math.random() * 100 + 'vw';
+  particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+  particle.style.animationDelay = Math.random() * 5 + 's';
+  container.appendChild(particle);
+}
+
+// Logic maintaining original functionality
+function updateDisplay() {
+  const now = new Date();
+  document.getElementById('time-val').textContent = now.toLocaleTimeString([], {hour12: false});
+  document.getElementById('date-val').textContent = now.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function getBattery() {
+  if (navigator.getBattery) {
+    navigator.getBattery().then(function(battery) {
+      const update = () => {
+        let level = Math.round(battery.level * 100) + '%';
+        let status = battery.charging ? '⚡' : '';
+        document.getElementById('battery-status').textContent = status + ' ' + level;
+      };
+      update();
+      battery.addEventListener('levelchange', update);
+      battery.addEventListener('chargingchange', update);
+    });
+  }
+}
+
+setInterval(updateDisplay, 1000);
+updateDisplay();
+getBattery();
+</script>
+
+</body>
+</html>
